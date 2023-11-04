@@ -6,6 +6,11 @@ from mongoengine import *
 connect('99lb')
 
 
+class NotificationTarget(Enum):
+    TELEGRAM = 'telegram'
+    EMAIL = 'email'
+
+
 class User(Document):
     user_id = StringField(required=True)  # to be used in the configuration
     email = EmailField()  # username at the same time
@@ -20,6 +25,8 @@ class User(Document):
     salt = BinaryField()
     rounds = IntField()
     hashed = BinaryField()
+    # misc
+    notification_targets = ListField()  # values from NotificationTarget enum
 
 
 class Status(Enum):

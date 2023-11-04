@@ -10,6 +10,12 @@ Business Process Workflow Automation
   * Nested groups
   * Organisation hierarchy or hierarchies
 
+## Workflow description
+On the initiation the initiator chooses the BP Workflow to initiate and fills at least one field with free text.
+After creation the process starts automatically.
+Process can be sent to the previous step or returned to the initiator.
+Process can time out or be escalated automatically.
+
 ## Example configuration YAML
 ```yaml
 name: Document Approval Process
@@ -44,7 +50,8 @@ steps:
           -id: Individual3
 ```
 
-On the initiation the initiator chooses the BP Workflow to initiate and fills at least one field with free text.
-After creation the process starts automatically.
-Process can be sent to the previous step or returned to the initiator.
-Process can time out or be escalated automatically.
+## Quickstarts
+
+### AWS Chalice
+
+### FastAPI
